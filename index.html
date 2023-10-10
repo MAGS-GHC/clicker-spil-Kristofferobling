@@ -2,22 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker Spil</title>
     <link rel="icon" type="image/x-icon" href="/Billeder/favicon.ico">
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <!--<script src="app.js"></script>-->
+    <script src="Multiplier.js"></script>
 </head>
-<body>
-    <div class="header">
-        <main>
-            <h1>Cookie Clicker</h1>
-            <p id="cookies">0 cookies</p>
-            <img src="/Billeder/cookie.png" alt="cookiebillede" onclick="ClickOnCookie()">
-        </main>
-    </div>
-    
-        
-    <button id="cookieknap" onclick="DoubleCookies()">2 x Cookies</button>
+<body background="/Billeder/cookieclickerbackground.jpg">
+    <center>
+        <p id="cookies">0 cookies</p>
+        <img src="/Billeder/cookie.png" alt="cookiebillede" id="cookieclickerknap" onclick="ClickOnCookie()">
+        <button id="cookieknap" onclick="MultiplierCookieStore()">2 x Cookies</button>
+        <button id="autoclicker" onclick="AutoclickerStore()">1 x Hastighed</button>
+    </center>
 </body>
 </html>
