@@ -30,8 +30,12 @@ let cookieMultiplier = multiplierCookies.level1;
 
 function UpdateCookieCounter() {
     document.getElementById("cookies").innerHTML = `${cookies} cookies`;
-    document.getElementById("cookiesInTotal").innerHTML = `${cookiesInTotal} cookies in total`;
     document.title = `${cookies} cookies - Clicker Spil`;
+}
+
+function UpdateCookiesInTotal(){
+    document.getElementById("cookiesInTotal").innerHTML = `${cookiesInTotal} cookies in total`;
+
 }
 
 function ClickOnCookie() {

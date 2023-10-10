@@ -1,5 +1,5 @@
 
-const autoclickerLevel = {
+/* const autoclickerLevel = {
     level0: 0,
     level1: 1,
     level2: 2,
@@ -54,8 +54,8 @@ let autoclickInterval;
     }
 } 
 
-function AutoclickerStore() {
-    const autoclickerLevels = [
+function AutoclickerStore1() {
+    const autoclickerLevels1 = [
         { level: autoclickerLevel.level0, price: autoclickerPrice.level1Price, time: autoclickerTime.level1Time, nextLevel: autoclickerLevel.level1, nextButtonText: "2 x Hastighed" },
         { level: autoclickerLevel.level1, price: autoclickerPrice.level2Price, time: autoclickerTime.level2Time, nextLevel: autoclickerLevel.level2, nextButtonText: "3 x Hastighed" },
         { level: autoclickerLevel.level2, price: autoclickerPrice.level3Price, time: autoclickerTime.level3Time, nextLevel: autoclickerLevel.level3, nextButtonText: "4 x Hastighed" },
@@ -90,4 +90,17 @@ function AutoclickerStore() {
         continue;
     }
     UpdateCookieCounter();
-}
+} */
+
+let autoclickerTimeArr = [10000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000];
+let autoclickerPriceArr = [10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 1000000000];
+let autoclickerLevelArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function makeButtons(autoclickerLevels) {
+    for (let index in ) {
+      $('.button-holder').append('<button value=' + c[i] + '>' + c[i] +
+        '</button>');
+    }
+  }
+  
+  makeButtons(buttons);
