@@ -31,6 +31,7 @@ let cookieMultiplier = multiplierCookies.level1;
 function UpdateCookieCounter() {
     document.getElementById("cookies").innerHTML = `${cookies} cookies`;
     document.title = `${cookies} cookies - Clicker Spil`;
+
 }
 
 function UpdateCookiesInTotal(){
@@ -56,6 +57,7 @@ function MultiplierCookieStore() {
         { level: multiplierCookies.level8, price: multiplierCookiePrice.level9Price, nextLevel: multiplierCookies.level9, nextButtonText: "512 x Cookies" },
         { level: multiplierCookies.level9, price: multiplierCookiePrice.level10Price, nextLevel: multiplierCookies.level10, nextButtonText: "Maxed" }
     ];
+
 
     for (let index in multiplierLevels) {
         const level = multiplierLevels[index];
