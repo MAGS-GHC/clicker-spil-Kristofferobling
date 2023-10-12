@@ -6,39 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker Spil</title>
     <link rel="icon" type="image/x-icon" href="/Billeder/favicon.ico">
-    <!--<script src="app.js"></script>-->
-    <script src="Multiplier.js"></script>
-    <script src="Autoclicker.js"></script>
+    <script src="app.js"></script>
+    <script src="Achievements.js"></script>
 </head>
 <body background="/Billeder/cookieclickerbackground.jpg">
     <center>
         <p id="cookies">0 cookies</p>
-        <img src="/Billeder/cookie.png" alt="cookiebillede" id="cookieclickerknap" onclick="ClickOnCookie()">
-       
-            <button  id="cookieknap" onclick="MultiplierCookieStore(), onclick=openPopup()">2 x Cookies</button>
-            <button  id="autoclicker" onclick="AutoclickerStore(), onclick=openPopup()">1 x Hastighed</button>
-        <div class="container">
-
-            <div class="popup" id="popup">
-                <h2>Achievement</h2>
-                <p>You've levelled up!</p>
-                <div class="alert">
-                    <span class="closebtn" onclick="closePopup;"></span>
-                  </div>
-            </div>
-        </div>
-        
+        <div id="shine"></div>
+        <div id="shine2"></div>
+        <img src="/Billeder/cookie.png" draggable="false" alt="cookiebillede" id="cookieclickerknap" onclick="ClickOnCookie()">
+        <button id="cookieknap" onclick="MultiplierCookieStore()">2 x Cookies</button>
+        <button id="autoclicker" onclick="AutoclickerStore()">1 x Autoclicker</button>
+        <p id="cookiesInTotal">0 cookies in total</p>
     </center>
-    <script>
-        let popup = document.getElementById("popup");
-
-        function openPopup(){
-            popup.classList.add("open-popup");
-        }
-        function closePopup(){
-            popup.classList.remove("open-popup");
-        }
-    </script>
+<!--Popup bliver designet lidt HTML-->
+    <div class="popup">
+        <div class="head">
+          <div class="icon">
+            <img src="Billeder/images.jpg">
+            <div class="box">
+              <i class="fa fa-check"></i>
+            </div>
+          </div>
+        </div>
+        <div class="body">
+          <h1>TILLYKKE!!</h1>
+          <p>Du opgraderede!</p>
+          <button class="close-btn">&times; Luk</button>
+        </div>
+    </div>
 
 </body>
 </html>
+

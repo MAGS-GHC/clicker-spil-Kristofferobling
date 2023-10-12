@@ -1,4 +1,5 @@
 body {
+    user-select: none;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -24,6 +25,7 @@ body {
     left: 50%;
     transition: 0.2s;
     cursor: pointer;
+    filter: drop-shadow(0 0 10px black);
 }
 
 #cookieclickerknap:hover {
@@ -39,8 +41,8 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     position: absolute;
-    top: 50%;
-    left: 80%;
+    top: 45%;
+    left: 75%;
     background-color: rgb(122, 76, 22);
     color: ghostwhite;
     border: 2px solid rgb(95, 57, 14);
@@ -57,6 +59,14 @@ body {
 #cookieknap:hover {
     background-color: rgb(95, 57, 14);
     transform: translate(-50%, -50%) scale(1.1);
+    transition: 0.2s;
+}
+
+#cookieknap:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+    background-color: rgb(90, 68, 45);
+    transform: translate(-50%, -50%) scale(1);
     transition: 0.2s;
 }
 
@@ -78,8 +88,8 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     position: absolute;
-    top: 65%;
-    left: 80%;
+    top: 55%;
+    left: 75%;
     background-color: rgb(122, 76, 22);
     color: ghostwhite;
     border: 2px solid rgb(95, 57, 14);
@@ -99,48 +109,153 @@ body {
     transition: 0.2s;
 }
 
-
-.popup{
-    width: 400px;
-    background: #fff;
-    border-radius: 6px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: #333;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
-}
-
-.open-popup{
-    visibility: visible;
-    top: 50%;
+#autoclicker:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+    background-color: rgb(90, 68, 45);
     transform: translate(-50%, -50%) scale(1);
+    transition: 0.2s;
 }
 
-.close-popup{
-  transition: 0.3s;
+#shine {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 6.7%; 
+    height: 13.5%; 
+    background-image: url('/Billeder/shine.png'); 
+    animation: rotates 25s linear infinite;
+    transform-origin: center;
+    transform-box: both;
+    overflow: visible;
+    border: none;
+    opacity: 25%;
 }
 
-.popup h2{
-    font-size: 38px;
-    font-weight: 500;
-    margin: 30px 0 10px;
+#shine2 {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 6.7%; 
+    height: 13.5%; 
+    background-image: url('/Billeder/shine.png'); 
+    animation: rotatesCounterClockwise 25s linear infinite;
+    transform-origin: center;
+    transform-box: both;
+    overflow: visible;
+    border: none;
+    opacity: 25%;
 }
 
-.popup button{
-    width: 100%;
-    margin-top: 50px;
-    padding: 10px 0;
-    background: #6fd649;
-    color: #fff;
-    border: 0;
-    outline: none;
-    font-size: 18px;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+@keyframes rotates {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg) scale(3.5);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg) scale(3.5);
+    }
 }
+
+@keyframes rotatesCounterClockwise {
+    from {
+      transform: translate(-50%, -50%) rotate(360deg) scale(3.5);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(0deg) scale(3.5);
+    }
+}
+
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+  }
+  body {
+    font-family:"Raleway",sans-serif;
+  }
+  .center {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  }
+  .center button {
+    padding:10px 20px;
+    background:#fff;
+    color:#222;
+    border:1px solid #222;
+    outline:none;
+    border-radius:20px;
+    font-size:16px;
+  }
+  .popup {
+    position:absolute;
+    top:-150%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(1.2);
+    opacity:0;
+    width:450px;
+    background:#fff;
+    border-radius:5px;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.15);
+    transition:top 0ms ease-in-out 200ms,
+               opacity 200ms ease-in-out 0ms,
+               transform 200ms ease-in-out 0ms;
+  }
+  .popup.active {
+    top:50%;
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+    transition:top 0ms ease-in-out 0ms,
+               opacity 200ms ease-in-out 0ms,
+               transform 200ms ease-in-out 0ms;
+  }
+  .popup .head {
+    padding:30px 20px;
+    background:#57af57;
+    text-align:center;
+  }
+  /*.popup .head .icon .box {
+    display:inline-block;
+    width:80px;
+    height:80px;
+    background:#f5f5f5;
+    font-size:40px;
+    line-height:80px;
+    color:#57af57;
+    border-radius:50%;
+  }*/
+  .popup img{
+    display:inline-block;
+    width:80px;
+    height:80px;
+    background:#f5f5f5;
+    font-size:40px;
+    line-height:80px;
+    color:#57af57;
+    border-radius:50%;
+  }
+  .popup .body {
+    padding:20px;
+    text-align:center;
+  }
+  .popup .body h1 {
+    font-size:25px;
+    margin-bottom:10px;
+    color:#222;
+  }
+  .popup .body p {
+    font-size:15px;
+    color:#555;
+    margin-bottom:20px;
+  }
+  .popup .body .close-btn {
+    padding:10px 20px;
+    border:1px solid #888;
+    color:#888;
+    background:#fff;
+    border-radius:20px;
+    font-size:16px;
+    cursor:pointer;
+    outline:none;
+  }

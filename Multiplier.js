@@ -58,18 +58,22 @@ function MultiplierCookieStore() {
         { level: multiplierCookies.level9, price: multiplierCookiePrice.level10Price, nextLevel: multiplierCookies.level10, nextButtonText: "Maxed" }
     ];
 
-
-    for (let index in multiplierLevels) {
-        const level = multiplierLevels[index];
-        if (cookieMultiplier === level.level) {
-            if (cookies >= level.price) {
-                cookies -= level.price;
-                document.getElementById("cookieknap").innerHTML = level.nextButtonText;
-                cookieMultiplier = level.nextLevel;
+    // Function, hvor vi køber opgraderinger til vores multiplier
+    function MultiplierCookieStore() {
+        for (let index in multiplierLevels) {
+            const level = multiplierLevels[index];
+            if (cookieMultiplier === level.level) {
+                if (cookies >= level.price) { // Tjekker om vi har cookies nok til opgradering
+                    cookies -= level.price; // Fratrækker opgraderingspris fra cookies
+                    document.getElementById("cookieknap").innerHTML = level.nextButtonText;
+                    cookieMultiplier = level.nextLevel; // Fastsætter nyt level
+                    UpdateCookieCounter(level.price); // Opdaterer counter
+                    popUp();
+                    //window.alert("Du opgraderede antal cookies pr. klik!"); // Giver achievement / confirmation popup ved køb
+                }
+                break;
             }
-            break;
+            continue;
         }
-        continue;
     }
-    UpdateCookieCounter();
 }
