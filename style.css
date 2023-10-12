@@ -212,27 +212,17 @@ body {
   }
   .popup .head {
     padding:30px 20px;
-    background:#57af57;
+    background:burlywood;
     text-align:center;
   }
-  /*.popup .head .icon .box {
+  .popup .head .icon .box {
     display:inline-block;
     width:80px;
     height:80px;
     background:#f5f5f5;
     font-size:40px;
     line-height:80px;
-    color:#57af57;
-    border-radius:50%;
-  }*/
-  .popup img{
-    display:inline-block;
-    width:80px;
-    height:80px;
-    background:#f5f5f5;
-    font-size:40px;
-    line-height:80px;
-    color:#57af57;
+    color: burlywood;
     border-radius:50%;
   }
   .popup .body {
@@ -259,3 +249,14 @@ body {
     cursor:pointer;
     outline:none;
   }
+  .trophy{
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 105px;
+    height: 105px;
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    filter: drop-shadow(0 0 5px rgb(44, 44, 44));
+}
+  
